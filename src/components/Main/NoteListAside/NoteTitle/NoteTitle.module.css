@@ -1,0 +1,30 @@
+.noteList__item{
+	padding: 5px;
+	height: 80px;
+
+	cursor: pointer;
+}
+
+.noteList__item:not(:first-child){
+	margin-top: 5px;
+}
+.noteList__title{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+
+	margin: 0;
+
+	color: #1F2948;
+}
+.noteList__text{
+	font-weight: 200;
+	font-size: 14px;
+	line-height: 16px;
+
+	margin: 0;
+
+	color: #000000;
+
+	text-overflow: ellipsis;
+}

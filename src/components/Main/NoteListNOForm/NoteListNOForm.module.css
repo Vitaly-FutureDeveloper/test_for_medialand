@@ -1,0 +1,14 @@
+.noFormBlock{
+	background: rgba(1, 194, 255, 0.2);
+	border-radius: 2px;
+	width: 100%;
+	padding: 0 10px;
+	margin-left: 25px;
+}
+.noFormBlock__text{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+
+	color: #1F2948;
+}

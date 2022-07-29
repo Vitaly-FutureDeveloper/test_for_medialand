@@ -1,0 +1,86 @@
+.noteFormBlock{
+	background: #FFFFFF;
+	border-radius: 4px;
+	padding: 10px;
+	margin-left: 25px;
+
+	width: 705px;
+}
+.noteForm{
+	width: 100%;
+}
+.noteForm__header{
+
+}
+.noteForm__title{
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+
+	margin: 0;
+
+	color: #7B86AF;
+}
+.noteFormMainBlock{
+	margin-top: 5px;
+}
+.noteFormMainBlock__texarea{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
+	text-transform: capitalize;
+
+	color: #7B86AF;
+	background: #FFFFFF;
+	border: 1px solid #BEC7DF;
+	border-radius: 2px;
+	box-sizing: border-box;
+
+	width: 100%;
+	height: 335px;
+
+	overflow: auto;
+}
+.noteFormSubmitsBlock{
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 25px;
+	margin-bottom: 10px;
+}
+.inputColorBlock{
+	display: flex;
+	justify-content: space-between;
+}
+.inputColorBlock__label{
+	color: #1F2948;
+	text-align: center;
+}
+.inputColorBlock__input{
+	margin-left: 18px;
+}
+
+.noteFormBtnBlock{
+	display: flex;
+	justify-content: space-between;
+
+}
+.noteFormBtnBlock__btnDel,
+.noteFormBtnBlock__btnSubmit{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: white;
+
+	border: 0;
+	border-radius: 2px;
+	width: 185px;
+	height: 40px;
+}
+.noteFormBtnBlock__btnDel{
+	background: #FF244B;
+}
+.noteFormBtnBlock__btnSubmit{
+	background: #2478FF;
+	margin-left: 15px;
+}

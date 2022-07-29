@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import { AuthContainer } from "./components/Auth/AuthContainer";
+import {Provider} from "react-redux";
+import store from "./redux/store";
+import {MainContainer} from "./components/Main/MainContainer";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+		<BrowserRouter>
+			<Provider store={store}>
+				<div className='app-wrapper'>
+					{/*<switch>*/}
+					<AuthContainer />
+					{/*<MainContainer />*/}
+						{/*<Route exact path='/' render={ () => <Redirect to={"/NoteListAside"} /> }/>*/}
+
+						{/*<Route path='/' render={() => <NoteListAside />}/>*/}
+
+					{/*</switch>*/}
+				</div>
+			</Provider>
+    </BrowserRouter>
   );
 }
 

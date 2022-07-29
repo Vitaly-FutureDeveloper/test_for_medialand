@@ -1,0 +1,161 @@
+.mainTable{
+	/*display: flex;*/
+}
+
+.notesBlock{
+	display: flex;
+	justify-content: space-between;
+	width: 950px;
+	margin: 40px auto 0;
+}
+
+.prewiew{
+	width: 880px;
+	background-size: cover;
+	background-repeat: repeat;
+}
+.prewiewBlock{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 320px auto 260px;
+}
+.prewiewBlock__imageBlock{
+
+}
+.prewiewBlock__imageTest{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	margin-left: 30px;
+}
+.prewiewBlock__text{
+
+}
+.mainNav{
+	margin: 0 auto 40px;
+}
+.mainNavList{
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+.mainNavList__item:not(:last-child){
+	margin-right: 30px;
+}
+.mainNavList__link{
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 16px;
+
+	text-decoration: none;
+
+	color: #1F2948;
+}
+
+.authForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 480px;
+
+	background: #FFFFFF;
+	box-shadow: 0px 4px 24px rgba(36, 120, 255, 0.16);
+}
+.authForm__title{
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 32px;
+
+	margin: 8px;
+
+	text-align: center;
+	color: #1F2948;
+}
+.authForm__Block{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+
+	text-align: center;
+
+	color: #1F2948;
+}
+.authForm__authLink{
+	color: #2478FF;
+	text-decoration: none;
+}
+
+.authFormImputs__inputWrap{
+	position: relative;
+	width: 100%;
+}
+.authFormImputs__inputWrap:not(:first-child){
+	margin-top: 12px;
+}
+.authFormImputs{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	margin-top: 28px;
+}
+
+.authFormImputs__input{
+	background: #FFFFFF;
+	border: 1px solid #BEC7DF;
+	border-radius: 2px;
+	width: 100%;
+	height: 40px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	box-sizing: border-box;
+}
+
+.authFormImputs__input[type=password]{
+	padding-right: 40px;
+}
+
+.authFormImputs__btnPassword{
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+
+	width: 24px;
+	height: 24px;
+
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 0;
+
+	cursor: pointer;
+}
+
+.authForm__send{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+
+	border: 0;
+	border-radius: 2px;
+
+	width: 100%;
+	height: 40px;
+
+	background: #2F80ED;
+	color: #FFFFFF;
+
+	margin-top: 16px;
+}
+
+.authForm__memory{
+
+}
