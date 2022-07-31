@@ -1,8 +1,10 @@
 import React, {useEffect} from "react";
-import {NoteListAside} from "./NoteListAside";
 import {useDispatch, useSelector} from "react-redux";
-import {getNotesThunk, setNoteThunk, setPutNoteThunk} from "../../../redux/mainReducer";
+import {getNotesThunk, setNoteThunk} from "../../../redux/mainReducer";
+
 import {getNotes} from "../../../redux/mainSelector";
+
+import {NoteListAside} from "./NoteListAside";
 
 
 

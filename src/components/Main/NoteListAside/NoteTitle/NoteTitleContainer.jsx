@@ -1,8 +1,10 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {NoteTitle} from "./NoteTitle";
-import {getBorderColor, getNoteText, getNoteTitle} from "../../../../redux/mainSelector";
+
 import {setCurrentNoteAC} from "../../../../redux/mainReducer";
+import {getBorderColor, getNoteText, getNoteTitle} from "../../../../redux/mainSelector";
+
+import {NoteTitle} from "./NoteTitle";
 
 
 

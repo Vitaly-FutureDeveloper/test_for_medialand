@@ -1,6 +1,3 @@
-import {putNoteFromBackendAC} from "./mainReducer";
-import {NotesAPI} from "../api/NotesAPI";
-
 const SET_SHOW_MODAL_DELETE_NOTE = "SET_SHOW_MODAL_DELETE_NOTE";
 
 const initialState = {

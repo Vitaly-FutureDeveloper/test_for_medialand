@@ -1,12 +1,14 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {NoteListForm} from "./NoteListForm";
-import {NoteListNOForm} from "../NoteListNOForm/NoteListNOForm";
-import {getCurrentNote, getIsNoteList, getNoteTextarea} from "../../../redux/mainSelector";
-import {required} from "../../formUtils/validatings";
+
 import {setPutNoteThunk} from "../../../redux/mainReducer";
 import {setToggleModalAC} from "../../../redux/modalsReducer";
 
+import {NoteListForm} from "./NoteListForm";
+import {NoteListNOForm} from "../NoteListNOForm/NoteListNOForm";
+import {required} from "../../formUtils/validatings";
+
+import {getCurrentNote, getIsNoteList, getNoteTextarea} from "../../../redux/mainSelector";
 
 
 

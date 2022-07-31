@@ -6,8 +6,7 @@ export const NoteTitle = ({borderColor, backgroundColor, noteTitle, noteText,
 
 
 	return (
-		<li
-				className={styles.noteList__item}
+		<li className={styles.noteList__item}
 				onClick={ () => onChangeCurrentNoteItem() }
 				style={{
 			borderLeft: `3px solid ${borderColor}`,

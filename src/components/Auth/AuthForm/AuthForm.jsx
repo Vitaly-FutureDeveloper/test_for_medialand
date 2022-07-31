@@ -7,6 +7,7 @@ import styles from "./AuthForm.module.css";
 import iconPassword from "../../../assets/img/icon_password.svg";
 
 
+
 export const AuthForm = ({isAuth, inputPasswordRef, onShowPassword, onSubmit, required}) => {
 
 

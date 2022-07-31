@@ -1,7 +1,8 @@
 import React from "react";
-import {Header} from "./Header";
 import {useSelector} from "react-redux";
 import {getLogin, getStatus} from "../../../redux/authSelector";
+
+import {Header} from "./Header";
 
 export const HeaderContainer = () => {
 	const authStatus = useSelector(getStatus);

@@ -1,9 +1,13 @@
 import React, {useRef} from "react";
-import {AuthForm} from "./AuthForm";
-import {loginThunk} from "../../../redux/authReducer";
 import {useDispatch, useSelector} from "react-redux";
+
+import {loginThunk} from "../../../redux/authReducer";
 import {getIsAuth} from "../../../redux/authSelector";
+
 import {required} from "../../formUtils/validatings";
+import {AuthForm} from "./AuthForm";
+
+
 
 export const AuthFormContainer = () => {
 	const dispatch = useDispatch();

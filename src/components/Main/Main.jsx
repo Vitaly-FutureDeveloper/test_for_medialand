@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Main.module.css";
+
+import {HeaderContainer} from "./Header/HeaderContainer";
 import {NoteListAsideContainer} from "./NoteListAside/NoteListAsideContainer";
 import {NoteListFormContainer} from "./NoteListForm/NoteListFormContainer";
-import {HeaderContainer} from "./Header/HeaderContainer";
 import {ModalDeleteNoteContainer} from "../modals/ModalDeleteNoteContainer";
 
 export const Main = () => {

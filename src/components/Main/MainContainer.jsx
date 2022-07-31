@@ -1,6 +1,8 @@
 import React from "react";
-import {Main} from "./Main";
+
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
+
+import {Main} from "./Main";
 
 
 

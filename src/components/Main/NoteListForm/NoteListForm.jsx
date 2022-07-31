@@ -3,8 +3,9 @@ import {Form, Field} from "react-final-form";
 
 import styles from "./NoteListForm.module.css";
 
-export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, required}) => {
 
+
+export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, required}) => {
 
 	return (
 		<section className={styles.noteFormBlock}>

@@ -1,13 +1,15 @@
 import React from "react";
+import styles from "./Auth.module.css";
+
 import Vector from "./../../assets/img/Vector.svg";
 import Medialand from "./../../assets/img/medialand.svg";
 import loginBackground from "./../../assets/background/background.png";
-import iconPassword from "./../../assets/img/icon_password.svg"
-import styles from "./Auth.module.css";
+
 import {AuthFormContainer} from "./AuthForm/AuthFormContainer";
 
-export const Auth = () => {
 
+
+export const Auth = () => {
 
 	return (
 		<div className={styles.mainTable}>

@@ -1,5 +1,6 @@
 .noteAside{
 	width: 225px;
+	min-width: 225px;
 	min-height: 460px;
 
 	background: #FFFFFF;
