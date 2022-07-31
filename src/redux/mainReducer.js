@@ -4,8 +4,8 @@ const SET_CURRENT_NOTE = "SET_CURRENT_NOTE";
 
 const GET_NOTES_FROM_BACKEND = "GET_NOTES_FROM_BACKEND";
 const SET_NOTE_FROM_BACKEND = "SET_NOTE_FROM_BACKEND";
+const PUT_NOTE_FROM_BACKEND = "PUT_NOTE_FROM_BACKEND";
 
-const SET_NOTE = "SET_NOTE";
 const SET_TEXT_TO_CURRENT_NOTE = "SET_TEXT_TO_CURRENT_NOTE";
 
 
@@ -39,20 +39,6 @@ const mainReducer = (state=initialState, action) => {
 			return body;
 		}
 
-		case SET_NOTE: {
-			const newId = state.notes.length + 1;
-			const pushObj = {
-				noteId: newId,
-				noteTitle: `#Заметка_${newId}`,
-				noteText: 'Пустая заметка',
-				noteBorderColor: '#CFCFCF',
-			}
-			const body = {
-				...state,
-				notes: [...state.notes, pushObj],
-			}
-			return body;
-		}
 
 		case GET_NOTES_FROM_BACKEND: {
 			// Получение списка через get запрос
@@ -74,7 +60,7 @@ const mainReducer = (state=initialState, action) => {
 			// Получение 1 note после post запроса
 			const newId = state.notes.length + 1;
 			const pushObj = {
-				noteId: newId,
+				noteId: action.id,
 				noteTitle: action.title, // `#Заметка_${newId}`,
 				noteText: action.body,
 				noteBorderColor: action.color,
@@ -83,6 +69,23 @@ const mainReducer = (state=initialState, action) => {
 				...state,
 				notes: [...state.notes, pushObj],
 			}
+			return body;
+		}
+
+		case PUT_NOTE_FROM_BACKEND: {
+			// Обновление 1 note после put запроса
+			const newId = state.notes.length;
+			const pushObj = {
+				noteId: action.id,
+				noteTitle: action.title,
+				noteText: action.body,
+				noteBorderColor: action.color,
+			}
+			const body = {
+				...state,
+				notes: [...state.notes],
+			}
+			body.notes[action.id] = pushObj;
 			return body;
 		}
 
@@ -109,9 +112,6 @@ const noteAPI = new NotesAPI();
 // ******************* //
 
 
-export const setNewNoteAC = () => ({
-	type: SET_NOTE,
-});
 
 
 export const setCurrentNoteAC = (currentNote) => ({
@@ -130,14 +130,24 @@ export const getNotesFromBackendAC = (notes) => ({
 	notes,
 });
 
-export const setNoteFromBackendAC = (title, body, color) => ({
+export const setNoteFromBackendAC = (id, title, body, color) => ({
 	// Получение 1 note после post запроса
 	type: SET_NOTE_FROM_BACKEND,
+	id,
 	title,
 	body,
 	color,
 });
 
+
+export const putNoteFromBackendAC = (id, title, body, color) => ({
+	// Обновление 1 note после put запроса
+	type: PUT_NOTE_FROM_BACKEND,
+	id,
+	title,
+	body,
+	color,
+});
 
 
 
@@ -158,8 +168,23 @@ export const setNoteThunk = (title, body, color) => async (dispatch, getState) =
 	const response = await noteAPI.setNote(title, body, color, token);
 
 	if (response.data.status === "ok") {
-		const {title, body, color} = response.data.notes;
-		dispatch( setNoteFromBackendAC(title, body, color) );
+		const {id, title, body, color} = response.data.notes;
+
+		dispatch( setNoteFromBackendAC(id, title, body, color) );
+	}
+};
+
+export const setPutNoteThunk = (title, body, color) => async (dispatch, getState) => {
+	const currentNote = getState().mainPage.currentNote;
+	const token = getState().formPage.token;
+
+	const response = await noteAPI.putNote(currentNote, title, body, color, token);
+
+	if (response.data.status === "ok") {
+		const {id, title, body, color} = response.data.notes;
+
+		dispatch( putNoteFromBackendAC(id, title, body, color) );
+		debugger;
 	}
 };
 

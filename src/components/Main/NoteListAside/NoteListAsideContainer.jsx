@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {NoteListAside} from "./NoteListAside";
 import {useDispatch, useSelector} from "react-redux";
-import {getNotesThunk, setNewNoteAC, setNoteThunk} from "../../../redux/mainReducer";
+import {getNotesThunk, setNoteThunk, setPutNoteThunk} from "../../../redux/mainReducer";
 import {getNotes} from "../../../redux/mainSelector";
 
 
@@ -11,7 +11,6 @@ export const NoteListAsideContainer = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		// dispatch( setNoteThunk('adasd', 'adasdJLKNKL', "#000000") );
 
 		//************************
 		//Невалидный Json на get запрос
@@ -27,6 +26,11 @@ export const NoteListAsideContainer = () => {
 		const newId = notes.length + 1;
 		dispatch( setNoteThunk(`#Заметка_${newId}`, 'Пустая заметка', "#000000") );
 	};
+
+	// const onPutNote = ({body, color}) => {
+	// 	const newId = notes.length + 1;
+	// 	dispatch( setPutNoteThunk(`#Заметка_${newId}`, 'Пустая заметка', "#000000") );
+	// };
 
 	return <NoteListAside notes={notes} onAddNote={onAddNote} />;
 };

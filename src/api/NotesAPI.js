@@ -21,4 +21,18 @@ export class NotesAPI extends AjaxAPI {
 			},
 		});
 	}
+
+	putNote(id, title, body, color, token){
+		const bodyObj = {
+			id,
+			title,
+			body,
+			color,
+		};
+		return this.instance.put(`/note`, bodyObj, {
+			headers: {
+				'Authorization': `Basic ${token}`
+			},
+		});
+	}
 }

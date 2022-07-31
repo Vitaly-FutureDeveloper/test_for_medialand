@@ -3,6 +3,7 @@ import {AuthForm} from "./AuthForm";
 import {loginThunk} from "../../../redux/authReducer";
 import {useDispatch, useSelector} from "react-redux";
 import {getIsAuth} from "../../../redux/authSelector";
+import {required} from "../../formUtils/validatings";
 
 export const AuthFormContainer = () => {
 	const dispatch = useDispatch();
@@ -24,8 +25,6 @@ export const AuthFormContainer = () => {
 			:
 			inputPasswordRef.current.type = 'password';
 	};
-
-	const required = value => (value ? undefined : 'Поле обязательно для ввода');
 
 
 	return <AuthForm

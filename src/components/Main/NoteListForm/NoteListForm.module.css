@@ -9,6 +9,14 @@
 .noteForm{
 	width: 100%;
 }
+.errorText{
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translateY(-100%);
+
+	color: #FF244B;
+}
 .noteForm__header{
 
 }
@@ -22,6 +30,7 @@
 	color: #7B86AF;
 }
 .noteFormMainBlock{
+	position: relative;
 	margin-top: 5px;
 }
 .noteFormMainBlock__texarea{
@@ -49,6 +58,7 @@
 	margin-bottom: 10px;
 }
 .inputColorBlock{
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 }

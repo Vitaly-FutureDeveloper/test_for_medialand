@@ -1,8 +1,11 @@
 import React from "react";
-import { Form, Field } from "react-final-form";
-import styles from "./AuthForm.module.css";
-import iconPassword from "../../../assets/img/icon_password.svg";
 import {Navigate} from "react-router-dom";
+import {Form, Field} from "react-final-form";
+
+import styles from "./AuthForm.module.css";
+
+import iconPassword from "../../../assets/img/icon_password.svg";
+
 
 export const AuthForm = ({isAuth, inputPasswordRef, onShowPassword, onSubmit, required}) => {
 
@@ -29,7 +32,10 @@ export const AuthForm = ({isAuth, inputPasswordRef, onShowPassword, onSubmit, re
 							{({input, meta}) => (
 								<div className={styles.authFormImputs}>
 									<label className={styles.authFormImputs__inputWrap}>
-										<input className={styles.authFormImputs__input} {...input} type="text" placeholder="Введите имя"/>
+										<input className={styles.authFormImputs__input}
+													 {...input}
+													 type="text"
+													 placeholder="Введите имя"/>
 									</label>
 									{meta.error && meta.touched && <span className={styles.errorText}>{meta.error}</span>}
 								</div>
@@ -63,6 +69,5 @@ export const AuthForm = ({isAuth, inputPasswordRef, onShowPassword, onSubmit, re
 				</form>
 			)}
 		/>
-
-	)
+	);
 };

@@ -11,31 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee9fc5c-044a-417f-9b21-2c5b1b0adb34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/LoginAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/NotesAPI.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthFormContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Main/Header/HeaderContainer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/hoc/withAuthRedirect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/authSelector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/forms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/formUtils/validatings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/MainContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/MainContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAside.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/NotesAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/NotesAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthFormContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthFormContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAsideContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAsideContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitleContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitleContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListFormContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListFormContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/mainReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/mainReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +81,7 @@
       <workItem from="1659082485872" duration="38854000" />
       <workItem from="1659169416583" duration="2636000" />
       <workItem from="1659206798762" duration="11735000" />
-      <workItem from="1659252430441" duration="11028000" />
+      <workItem from="1659252430441" duration="15841000" />
     </task>
     <servers />
   </component>
