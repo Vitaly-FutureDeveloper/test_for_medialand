@@ -2,7 +2,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {NoteListForm} from "./NoteListForm";
 import {NoteListNOForm} from "../NoteListNOForm/NoteListNOForm";
-import {getIsNoteList, getNotes, getNoteTextarea} from "../../../redux/mainSelector";
+import {getCurrentNote, getIsNoteList, getNoteTextarea} from "../../../redux/mainSelector";
 import {required} from "../../formUtils/validatings";
 import {setPutNoteThunk} from "../../../redux/mainReducer";
 
@@ -13,15 +13,13 @@ export const NoteListFormContainer = () => {
 
 	const dispatch = useDispatch();
 
-	// const currentNote = useSelector((state) => getCurrentNote(state));
+	const currentNote = useSelector(getCurrentNote);
 
 	const isNoteList = useSelector((state) => getIsNoteList(state));
 	const textAreaText = useSelector((state) => getNoteTextarea(state));
-	const notes = useSelector(getNotes);
 
 	const onSubmit = ({body, color}) => {
-		const newId = notes.length;
-		dispatch( setPutNoteThunk(`#Заметка_${newId}`, body, color) );
+		dispatch( setPutNoteThunk(`#Заметка_${currentNote}`, body, color) );
 	};
 
 

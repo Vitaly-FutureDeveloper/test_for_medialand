@@ -37,7 +37,7 @@ export const getIsNoteList = createSelector(getIsNoteListSelector,
 
 const getNoteTextareaSelector = (state) => {
 	const currentNote = getCurrentNote(state);
-	return state.mainPage.notes[currentNote].noteText;
+	return state.mainPage.notes[currentNote] ? state.mainPage.notes[currentNote].noteText : '';
 };
 export const getNoteTextarea = createSelector(getNoteTextareaSelector,
 	(textAreaText) => textAreaText

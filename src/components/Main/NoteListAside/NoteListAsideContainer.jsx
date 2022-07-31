@@ -27,10 +27,6 @@ export const NoteListAsideContainer = () => {
 		dispatch( setNoteThunk(`#Заметка_${newId}`, 'Пустая заметка', "#000000") );
 	};
 
-	// const onPutNote = ({body, color}) => {
-	// 	const newId = notes.length + 1;
-	// 	dispatch( setPutNoteThunk(`#Заметка_${newId}`, 'Пустая заметка', "#000000") );
-	// };
 
 	return <NoteListAside notes={notes} onAddNote={onAddNote} />;
 };

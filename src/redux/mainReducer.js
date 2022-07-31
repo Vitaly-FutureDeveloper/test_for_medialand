@@ -11,20 +11,7 @@ const SET_TEXT_TO_CURRENT_NOTE = "SET_TEXT_TO_CURRENT_NOTE";
 
 const initialState = {
 	currentNote: 0,
-	notes: [
-		{
-			noteId: 1,
-			noteTitle: '#Заметка_1',
-			noteText: 'бла бла бла бла бла  бла бла текст заметки превью, дальше просто обрезаем текст вот так...',
-			noteBorderColor: '#8478FF',
-		},
-		{
-			noteId: 2,
-			noteTitle: '#Заметка_2',
-			noteText: '2 бла бла бла бла бла  бла бла текст заметки превью, дальше просто обрезаем текст вот так...',
-			noteBorderColor: '#2478FF',
-		}
-	],
+	notes: [],
 };
 
 const mainReducer = (state=initialState, action) => {
@@ -74,7 +61,7 @@ const mainReducer = (state=initialState, action) => {
 
 		case PUT_NOTE_FROM_BACKEND: {
 			// Обновление 1 note после put запроса
-			const newId = state.notes.length;
+			const currentNote = state.currentNote;
 			const pushObj = {
 				noteId: action.id,
 				noteTitle: action.title,
@@ -85,7 +72,7 @@ const mainReducer = (state=initialState, action) => {
 				...state,
 				notes: [...state.notes],
 			}
-			body.notes[action.id] = pushObj;
+			body.notes[currentNote] = pushObj;
 			return body;
 		}
 
@@ -176,15 +163,15 @@ export const setNoteThunk = (title, body, color) => async (dispatch, getState) =
 
 export const setPutNoteThunk = (title, body, color) => async (dispatch, getState) => {
 	const currentNote = getState().mainPage.currentNote;
+	const noteId = getState().mainPage.notes[currentNote].noteId;
 	const token = getState().formPage.token;
 
-	const response = await noteAPI.putNote(currentNote, title, body, color, token);
+	const response = await noteAPI.putNote(noteId, title, body, color, token);
 
 	if (response.data.status === "ok") {
 		const {id, title, body, color} = response.data.notes;
 
 		dispatch( putNoteFromBackendAC(id, title, body, color) );
-		debugger;
 	}
 };
 
