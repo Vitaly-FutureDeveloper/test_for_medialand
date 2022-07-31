@@ -8,17 +8,13 @@ import {NoteListAside} from "./NoteListAside";
 
 
 
-export const NoteListAsideContainer = () => {
+export const NoteListAsideContainer = ({textAreaRef}) => {
 
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-
-		//************************
-		//Невалидный Json на get запрос
-		// *********************
-		// dispatch( getNotesThunk() );
-
+		// Грузим notes при первом рендере
+		dispatch( getNotesThunk() );
 	}, []);
 
 	const notes = useSelector(getNotes);
@@ -30,5 +26,5 @@ export const NoteListAsideContainer = () => {
 	};
 
 
-	return <NoteListAside notes={notes} onAddNote={onAddNote} />;
+	return <NoteListAside notes={notes} onAddNote={onAddNote} textAreaRef={textAreaRef} />;
 };

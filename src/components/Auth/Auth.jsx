@@ -3,7 +3,6 @@ import styles from "./Auth.module.css";
 
 import Vector from "./../../assets/img/Vector.svg";
 import Medialand from "./../../assets/img/medialand.svg";
-import loginBackground from "./../../assets/background/background.png";
 
 import {AuthFormContainer} from "./AuthForm/AuthFormContainer";
 
@@ -13,10 +12,7 @@ export const Auth = () => {
 
 	return (
 		<div className={styles.mainTable}>
-
-			<section className={styles.prewiew} style={{
-				backgroundImage: `url(${loginBackground})`,
-			}}>
+			<section className={styles.prewiew} >
 
 				<div className={styles.prewiewBlock}>
 					<div className={styles.prewiewBlock__imageBlock}>
@@ -57,47 +53,6 @@ export const Auth = () => {
 
 			<section className={styles.authFormBlock}>
 				<AuthFormContainer />
-				{/*<form action="/" onSubmit={formSubmit}>*/}
-
-				{/*	<h2 className={styles.authForm__title}>Войдите</h2>*/}
-				{/*	<div className={styles.authForm__Block}>*/}
-				{/*		<span>или </span>*/}
-				{/*		<a className={styles.authForm__authLink} href="">зарегистрируйтесь</a>*/}
-				{/*	</div>*/}
-
-				{/*	<div className={styles.authFormImputs}>*/}
-				{/*		<label className={styles.authFormImputs__inputWrap}>*/}
-
-				{/*			<input className={styles.authFormImputs__input}*/}
-				{/*						 ref={inputNameRef}*/}
-				{/*						 onChange={setInputName}*/}
-				{/*						 value={inputNameValue}*/}
-				{/*						 type="text"*/}
-				{/*			/>*/}
-
-				{/*		</label>*/}
-
-				{/*		<label className={styles.authFormImputs__inputWrap}>*/}
-
-				{/*			<input className={styles.authFormImputs__input}*/}
-				{/*						 ref={inputPasswordRef}*/}
-				{/*						 onChange={setInputPassword}*/}
-				{/*						 value={inputNamePassword}*/}
-				{/*						 type="password"*/}
-				{/*			/>*/}
-
-				{/*			<button className={styles.authFormImputs__btnPassword} style={{*/}
-				{/*				backgroundImage: `url(${iconPassword})`,*/}
-				{/*			}}></button>*/}
-
-				{/*		</label>*/}
-				{/*	</div>*/}
-
-				{/*	<button type={"submit"}*/}
-				{/*					className={styles.authForm__send}>Войти в профиль</button>*/}
-
-				{/*	<p className={styles.authForm__memory}>Забыли пароль или не можете войти?</p>*/}
-				{/*</form>*/}
 			</section>
 		</div>
 	)

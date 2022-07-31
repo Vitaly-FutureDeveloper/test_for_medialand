@@ -1,11 +1,11 @@
 import {NotesAPI} from "../api/NotesAPI";
+import {setToggleModalAC} from "./modalsReducer";
 
 const SET_CURRENT_NOTE = "SET_CURRENT_NOTE";
 
 const GET_NOTES_FROM_BACKEND = "GET_NOTES_FROM_BACKEND";
 const SET_NOTE_FROM_BACKEND = "SET_NOTE_FROM_BACKEND";
 const PUT_NOTE_FROM_BACKEND = "PUT_NOTE_FROM_BACKEND";
-const DELETE_NOTE_FROM_BACKEND = "DELETE_NOTE_FROM_BACKEND";
 
 const SET_TEXT_TO_CURRENT_NOTE = "SET_TEXT_TO_CURRENT_NOTE";
 
@@ -32,19 +32,22 @@ const mainReducer = (state=initialState, action) => {
 			// Получение списка через get запрос
 			const body = {
 				...state,
-				notes: [...state.notes, action.notes.map(() => ({
-					noteId: action.notes.id,
-					noteTitle: action.notes.title,
-					noteText: action.notes.body,
-					noteBorderColor: action.notes.color,
-				}))],
+				notes: [...state.notes],
 			}
+
+			body.notes = action.notes.map((note) => {
+				return {
+					noteId: note.id,
+					noteTitle: note.title,
+					noteText: note.body,
+					noteBorderColor: note.color,
+				}
+			});
 			return body;
 		}
 
 		case SET_NOTE_FROM_BACKEND: {
 			// Получение 1 note после post запроса
-			const newId = state.notes.length + 1;
 			const pushObj = {
 				noteId: action.id,
 				noteTitle: action.title, // `#Заметка_${newId}`,
@@ -75,15 +78,6 @@ const mainReducer = (state=initialState, action) => {
 			return body;
 		}
 
-		case DELETE_NOTE_FROM_BACKEND: {
-			// Удалит 1 выделеный note
-			const body = {
-				...state,
-				notes: [...state.notes.splice(action.currentNote, 1)],
-			}
-			return body;
-		}
-
 		case SET_TEXT_TO_CURRENT_NOTE: {
 			const currentNote = state.currentNote;
 			const body = {
@@ -107,23 +101,30 @@ const noteAPI = new NotesAPI();
 // ******************* //
 
 
-
-
 export const setCurrentNoteAC = (currentNote) => ({
 	type: SET_CURRENT_NOTE,
 	currentNote,
 });
 
+export const setCurrentNoteThunk = (currentNote) => async (dispatch) => {
+	await dispatch( setCurrentNoteAC(currentNote) );
+};
 
-export const setTextToCurrentNoteAC = (noteText) => ({
-	type: SET_TEXT_TO_CURRENT_NOTE,
-	noteText,
-});
 
 export const getNotesFromBackendAC = (notes) => ({
 	type: GET_NOTES_FROM_BACKEND,
 	notes,
 });
+
+export const getNotesThunk = () => async (dispatch, getState) => {
+	const token = getState().formPage.token;
+	const response = await noteAPI.getNote(token);
+
+	if (response.data.status === "ok") {
+		dispatch( getNotesFromBackendAC(response.data.notes) );
+	}
+};
+
 
 export const setNoteFromBackendAC = (id, title, body, color) => ({
 	// Получение 1 note после post запроса
@@ -133,30 +134,6 @@ export const setNoteFromBackendAC = (id, title, body, color) => ({
 	body,
 	color,
 });
-
-
-export const putNoteFromBackendAC = (id, title, body, color) => ({
-	// Обновление 1 note после put запроса
-	type: PUT_NOTE_FROM_BACKEND,
-	id,
-	title,
-	body,
-	color,
-});
-
-
-
-
-
-
-export const getNotesThunk = () => async (dispatch) => {
-	const response = await noteAPI.getNote();
-
-	if (response.data.status === "ok") {
-		dispatch( getNotesFromBackendAC(response.data.notes) );
-	}
-};
-
 
 export const setNoteThunk = (title, body, color) => async (dispatch, getState) => {
 	const token = getState().formPage.token;
@@ -168,6 +145,16 @@ export const setNoteThunk = (title, body, color) => async (dispatch, getState) =
 		dispatch( setNoteFromBackendAC(id, title, body, color) );
 	}
 };
+
+
+export const putNoteFromBackendAC = (id, title, body, color) => ({
+	// Обновление 1 note после put запроса
+	type: PUT_NOTE_FROM_BACKEND,
+	id,
+	title,
+	body,
+	color,
+});
 
 export const setPutNoteThunk = (title, body, color) => async (dispatch, getState) => {
 	const currentNote = getState().mainPage.currentNote;
@@ -183,10 +170,7 @@ export const setPutNoteThunk = (title, body, color) => async (dispatch, getState
 	}
 };
 
-const setDeleteNoteAC = (currentNote) => ({
-	type: DELETE_NOTE_FROM_BACKEND,
-	currentNote,
-});
+
 
 export const setDeleteNoteThunk = (title, body, color) => async (dispatch, getState) => {
 	const currentNote = getState().mainPage.currentNote;
@@ -195,8 +179,9 @@ export const setDeleteNoteThunk = (title, body, color) => async (dispatch, getSt
 
 	const response = await noteAPI.deleteNote(noteId, title, body, color, token);
 
-	if (response.data.status === "ok") {
-		dispatch( setDeleteNoteAC(currentNote) );
+	if (response.status === 204) {
+		dispatch( getNotesThunk() );
+		dispatch( setToggleModalAC() );
 	}
 };
 

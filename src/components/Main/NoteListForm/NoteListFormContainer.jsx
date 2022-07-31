@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {setPutNoteThunk} from "../../../redux/mainReducer";
@@ -12,14 +12,14 @@ import {getCurrentNote, getIsNoteList, getNoteTextarea} from "../../../redux/mai
 
 
 
-export const NoteListFormContainer = () => {
+export const NoteListFormContainer = ({textAreaRef}) => {
 
 	const dispatch = useDispatch();
 
 	const currentNote = useSelector(getCurrentNote);
 
 	const isNoteList = useSelector((state) => getIsNoteList(state));
-	const textAreaText = useSelector((state) => getNoteTextarea(state));
+	// const textAreaText = useSelector((state) => getNoteTextarea(state));
 
 	const onSubmit = ({body, color}) => {
 		dispatch( setPutNoteThunk(`#Заметка_${currentNote}`, body, color) );
@@ -31,9 +31,9 @@ export const NoteListFormContainer = () => {
 	};
 
 
-
 	return isNoteList ?
-		<NoteListForm textAreaText={textAreaText}
+		<NoteListForm textAreaRef={textAreaRef}
+									// textAreaText={textAreaText}
 									onSubmit={onSubmit}
 									onShowModalDelete={onShowModalDelete}
 									required={required} />

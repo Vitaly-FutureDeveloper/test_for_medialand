@@ -1,14 +1,14 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {setCurrentNoteAC} from "../../../../redux/mainReducer";
-import {getBorderColor, getNoteText, getNoteTitle} from "../../../../redux/mainSelector";
+import {setCurrentNoteAC, setCurrentNoteThunk} from "../../../../redux/mainReducer";
+import {getBorderColor, getNoteText, getNoteTextarea, getNoteTitle} from "../../../../redux/mainSelector";
 
 import {NoteTitle} from "./NoteTitle";
 
 
 
-export const NoteTitleContainer = ({iterableElement}) => {
+export const NoteTitleContainer = ({iterableElement, textAreaRef}) => {
 	const dispatch = useDispatch();
 
 	const BACKGROUND_NOTE_TRANSPARENT = '0D';
@@ -20,17 +20,18 @@ export const NoteTitleContainer = ({iterableElement}) => {
 
 	const backgroundColor = borderColor + BACKGROUND_NOTE_TRANSPARENT;
 
-	const onChangeCurrentNoteItem = () => {
+	const onChangeCurrentNoteItem = async (text) => {
 		//Меняет textarea по клику на заметку
-		dispatch( setCurrentNoteAC( iterableElement ) );
+		await dispatch( setCurrentNoteThunk( iterableElement ) );
+		textAreaRef.current.value = text;
 	};
 
 
-	return <NoteTitle
-										borderColor={borderColor}
+	return <NoteTitle borderColor={borderColor}
 										backgroundColor={backgroundColor}
 										noteTitle={noteTitle}
 										noteText={noteText}
+										// textAreaText={textAreaText}
 										onChangeCurrentNoteItem={onChangeCurrentNoteItem}
 	/>;
 };

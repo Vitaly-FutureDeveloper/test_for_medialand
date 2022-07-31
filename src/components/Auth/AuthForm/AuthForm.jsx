@@ -4,7 +4,7 @@ import {Form, Field} from "react-final-form";
 
 import styles from "./AuthForm.module.css";
 
-import iconPassword from "../../../assets/img/icon_password.svg";
+// import iconPassword from "../../../assets/img/icon_password.svg";
 
 
 
@@ -51,10 +51,13 @@ export const AuthForm = ({isAuth, inputPasswordRef, onShowPassword, onSubmit, re
 													 {...input}
 													 type="password"
 													 placeholder="Введите пароль"/>
+										{/*<button className={styles.authFormImputs__btnPassword}*/}
+										{/*				onClick={(evt) => onShowPassword(evt)} style={{*/}
+										{/*	backgroundImage: `url(${iconPassword})`,*/}
+										{/*}}></button>*/}
+
 										<button className={styles.authFormImputs__btnPassword}
-														onClick={(evt) => onShowPassword(evt)} style={{
-											backgroundImage: `url(${iconPassword})`,
-										}}></button>
+														onClick={(evt) => onShowPassword(evt)}></button>
 									</label>
 									{meta.error && meta.touched && <span className={styles.errorText}>{meta.error}</span>}
 								</div>

@@ -7,6 +7,7 @@
 
 .prewiew{
 	width: 880px;
+	background-image: url("./../../assets/background/background.png");
 	background-size: cover;
 	background-repeat: repeat;
 }

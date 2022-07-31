@@ -6,18 +6,18 @@ import {NoteListAsideContainer} from "./NoteListAside/NoteListAsideContainer";
 import {NoteListFormContainer} from "./NoteListForm/NoteListFormContainer";
 import {ModalDeleteNoteContainer} from "../modals/ModalDeleteNoteContainer";
 
-export const Main = () => {
+export const Main = ({textAreaRef}) => {
 
 	return (
 		<div className={styles.mainTable}>
-
+			{/* Модальное окно открывается при нажатии кнопки Удалить из NoteListFormContainer */}
 			<ModalDeleteNoteContainer />
 
 			<HeaderContainer />
 
 			<div className={styles.notesBlock}>
-				<NoteListAsideContainer />
-				<NoteListFormContainer />
+				<NoteListAsideContainer textAreaRef={textAreaRef} />
+				<NoteListFormContainer textAreaRef={textAreaRef} />
 			</div>
 		</div>
 	)

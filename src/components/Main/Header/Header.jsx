@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./Header.module.css";
 
 import Vector from "./../../../assets/img/Vector.svg";
 import Medialand from "./../../../assets/img/medialand.svg";
 import userPhoto from "./../../../assets/img/photoUser.png";
-import styles from "./Header.module.css";
 
-export const Header = ({authStatus, authLogin}) => {
+
+export const Header = ({authLogin}) => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.headerContainer}>

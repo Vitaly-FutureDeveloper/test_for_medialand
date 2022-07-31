@@ -4,6 +4,8 @@
 	width: 100%;
 	padding: 0 10px;
 	margin-left: 25px;
+
+	box-shadow: 0px 4px 24px rgba(36, 120, 255, 0.16);
 }
 .noFormBlock__text{
 	font-weight: 400;

@@ -5,6 +5,10 @@
 	cursor: pointer;
 	overflow: hidden;
 }
+.noteList__item:hover,
+.noteList__item:focus{
+	opacity: 0.8;
+}
 
 .noteList__item:not(:first-child){
 	margin-top: 5px;

@@ -5,7 +5,7 @@ import styles from "./NoteListForm.module.css";
 
 
 
-export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, required}) => {
+export const NoteListForm = ({textAreaRef, onSubmit, onShowModalDelete, required}) => {
 
 	return (
 		<section className={styles.noteFormBlock}>
@@ -22,18 +22,18 @@ export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, require
 						<div className={styles.noteFormMainBlock}>
 
 							<Field name="body" validate={required}>
-								{({input, meta}) => (
-									<div className={styles.noteFormMainBlock}>
-										<textarea className={styles.noteFormMainBlock__texarea}
-															// name=""
-															{...input}
-															cols="30" rows="10"
-															// value={textAreaText}
+								{({input, meta}) => {
 
+									return <div className={styles.noteFormMainBlock}>
+										<textarea className={styles.noteFormMainBlock__texarea}
+															{...input}
+															ref={textAreaRef}
+															cols="30" rows="10"
 										/>
+
 										{meta.error && meta.touched && <span className={styles.errorText}>{meta.error}</span>}
 									</div>
-								)}
+								}}
 							</Field>
 
 							<Field name="color" validate={required}>
@@ -47,8 +47,6 @@ export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, require
 											<input type="color" className={styles.inputColorBlock__input}
 														 id="inputColor"
 														 {...input}
-												// name="inputColor"
-														 // value="#ffffff"
 											/>
 											{meta.error && meta.touched && <span className={styles.errorText}>{meta.error}</span>}
 										</div>

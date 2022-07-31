@@ -7,12 +7,11 @@ export const NoteTitle = ({borderColor, backgroundColor, noteTitle, noteText,
 
 	return (
 		<li className={styles.noteList__item}
-				onClick={ () => onChangeCurrentNoteItem() }
+				onClick={ () => onChangeCurrentNoteItem(noteText) }
 				style={{
 			borderLeft: `3px solid ${borderColor}`,
 			backgroundColor: backgroundColor,
 		}}>
-
 			<h3 className={styles.noteList__title}>{noteTitle}</h3>
 			<p className={styles.noteList__text}>{noteText}</p>
 

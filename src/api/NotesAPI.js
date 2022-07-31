@@ -5,8 +5,12 @@ export class NotesAPI extends AjaxAPI {
 		super();
 	}
 
-	getNote(){
-		return this.instance.get(`/note`);
+	getNote(token){
+		return this.instance.get(`/note`, {
+			headers: {
+				'token': token
+			},
+		});
 	}
 
 	setNote(title, body, color, token){
@@ -17,7 +21,7 @@ export class NotesAPI extends AjaxAPI {
 		};
 		return this.instance.post(`/note`, bodyObj, {
 			headers: {
-				'Authorization': `Bearer ${token}`
+				'token': token
 			},
 		});
 	}
@@ -31,22 +35,25 @@ export class NotesAPI extends AjaxAPI {
 		};
 		return this.instance.put(`/note`, bodyObj, {
 			headers: {
-				'Authorization': `Bearer ${token}`
+				'token': token
 			},
 		});
 	}
 
 	deleteNote(id, title, body, color, token){
 		const bodyObj = {
-			id,
-			title,
-			body,
-			color,
-		};
-		return this.instance.delete(`/note`, bodyObj, {
 			headers: {
-				'Authorization': `Bearer ${token}`
+				token: token
 			},
-		});
+			data: {
+				id,
+				title,
+				body,
+				color,
+				token,
+			}
+		};
+
+		return this.instance.delete(`/note`, bodyObj);
 	}
 }
