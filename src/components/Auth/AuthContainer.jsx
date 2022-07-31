@@ -9,34 +9,27 @@ export const AuthContainer = () => {
 
 	const dispatch = useDispatch();
 
-	const inputNameRef = useRef(null);
-	const inputPasswordRef = useRef(null);
+	// const inputNameRef = useRef(null);
+	// const inputPasswordRef = useRef(null);
+	//
+	// const inputNameValue = useSelector((state => state.formPage.login));
+	// const inputNamePassword = useSelector((state => state.formPage.password));
+	//
+	// const setInputName = () => {
+	// 	const name = inputNameRef.current.value;
+	// 	dispatch( setAuthLogin( name ) );
+	// };
+	//
+	// const setInputPassword = () => {
+	// 	const password = inputPasswordRef.current.value;
+	// 	dispatch( setAuthPassword( password ) );
+	// };
+	//
+	// const formSubmit = (evt) => {
+	// 	evt.preventDefault();
+	//
+	// 	dispatch( login(inputNameValue, inputNamePassword) );
+	// };
 
-	const inputNameValue = useSelector((state => state.formPage.login));
-	const inputNamePassword = useSelector((state => state.formPage.password));
-
-	const setInputName = () => {
-		const name = inputNameRef.current.value;
-		dispatch( setAuthLogin( name ) );
-	};
-
-	const setInputPassword = () => {
-		const password = inputPasswordRef.current.value;
-		dispatch( setAuthPassword( password ) );
-	};
-
-	const formSubmit = (evt) => {
-		evt.preventDefault();
-
-		dispatch( login(inputNameValue, inputNamePassword) );
-	};
-
-	return <Auth inputNameValue={inputNameValue}
-							 inputNamePassword={inputNamePassword}
-							 inputNameRef={inputNameRef}
-							 inputPasswordRef={inputPasswordRef}
-							 setInputName={setInputName}
-							 setInputPassword={setInputPassword}
-							 formSubmit={formSubmit}
-	/>
+	return <Auth />
 };

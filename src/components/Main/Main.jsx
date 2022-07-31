@@ -1,15 +1,14 @@
 import React from "react";
 import styles from "./Main.module.css";
-import {Header} from "./Header/Header";
 import {NoteListAsideContainer} from "./NoteListAside/NoteListAsideContainer";
 import {NoteListFormContainer} from "./NoteListForm/NoteListFormContainer";
+import {HeaderContainer} from "./Header/HeaderContainer";
 
 export const Main = () => {
 
-
 	return (
 		<div className={styles.mainTable}>
-			<Header />
+			<HeaderContainer />
 
 			<div className={styles.notesBlock}>
 				<NoteListAsideContainer />

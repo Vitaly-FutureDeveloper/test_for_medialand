@@ -1,13 +1,19 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import {Main} from "./Main";
 import {useDispatch, useSelector} from "react-redux";
+import {withAuthRedirect} from "../hoc/withAuthRedirect";
+import {getNotesThunk} from "../../redux/mainReducer";
 
 
 
-export const MainContainer = () => {
+const MainContainer = () => {
 
 	const dispatch = useDispatch();
 
 
+
+
 	return <Main />;
 };
+
+export default withAuthRedirect(MainContainer);

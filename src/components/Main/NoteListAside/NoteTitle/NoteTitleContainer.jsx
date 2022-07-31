@@ -6,7 +6,7 @@ import {setCurrentNoteAC} from "../../../../redux/mainReducer";
 
 
 
-export const NoteTitleContainer = ({noteId, iterableElement}) => {
+export const NoteTitleContainer = ({iterableElement}) => {
 	const dispatch = useDispatch();
 
 	const BACKGROUND_NOTE_TRANSPARENT = '0D';
@@ -24,7 +24,7 @@ export const NoteTitleContainer = ({noteId, iterableElement}) => {
 	};
 
 
-	return <NoteTitle key={noteId}
+	return <NoteTitle
 										borderColor={borderColor}
 										backgroundColor={backgroundColor}
 										noteTitle={noteTitle}

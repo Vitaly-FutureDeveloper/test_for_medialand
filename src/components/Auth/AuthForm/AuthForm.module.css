@@ -1,0 +1,110 @@
+.authForm{
+	width: 100%;
+
+	padding-left: 70px;
+	padding-right: 70px;
+
+	box-sizing: border-box;
+}
+.errorText{
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-100%);
+
+	color: #FF244B;
+}
+.authForm__title{
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 32px;
+
+	margin: 8px;
+
+	text-align: center;
+	color: #1F2948;
+}
+.authForm__Block{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+
+	text-align: center;
+
+	color: #1F2948;
+}
+.authForm__authLink{
+	color: #2478FF;
+	text-decoration: none;
+}
+
+.authFormImputs__inputWrap{
+	position: relative;
+	width: 100%;
+}
+.authFormImputs__inputWrap:not(:first-child){
+	margin-top: 12px;
+}
+.authFormImputs{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	margin-top: 28px;
+}
+
+.authFormImputs__input{
+	background: #FFFFFF;
+	border: 1px solid #BEC7DF;
+	border-radius: 2px;
+	width: 100%;
+	height: 40px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	box-sizing: border-box;
+}
+
+.authFormImputs__input[type=password]{
+	padding-right: 40px;
+}
+
+.authFormImputs__btnPassword{
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+
+	width: 24px;
+	height: 24px;
+
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 0;
+
+	cursor: pointer;
+}
+
+.authForm__send{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+
+	border: 0;
+	border-radius: 2px;
+
+	width: 100%;
+	height: 40px;
+
+	background: #2F80ED;
+	color: #FFFFFF;
+
+	margin-top: 16px;
+}
+
+.authForm__memory{
+
+}

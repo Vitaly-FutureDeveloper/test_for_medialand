@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./NoteTitle.module.css";
 
-export const NoteTitle = ({key, borderColor, backgroundColor, noteTitle, noteText,
+export const NoteTitle = ({borderColor, backgroundColor, noteTitle, noteText,
 														onChangeCurrentNoteItem,}) => {
 
 
 	return (
-		<li key={key}
+		<li
 				className={styles.noteList__item}
 				onClick={ () => onChangeCurrentNoteItem() }
 				style={{
