@@ -1,0 +1,42 @@
+.modalDeleteNote{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 30px;
+
+	border: 2px solid grey;
+	border-radius: 5px;
+
+	background-color: #FFFFFF;
+
+	z-index: 100;
+}
+.modalDeleteNoteForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+.modalDeleteNote__btnDel,
+.modalDeleteNote__btnClose{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	color: white;
+
+	border: 0;
+	border-radius: 2px;
+	width: 185px;
+	height: 40px;
+}
+.modalDeleteNote__btnDel{
+	background: #FF244B;
+}
+.modalDeleteNote__btnClose{
+	background: #2478FF;
+	margin-left: 15px;
+}

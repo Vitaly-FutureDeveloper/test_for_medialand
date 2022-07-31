@@ -5,6 +5,7 @@ import {NoteListNOForm} from "../NoteListNOForm/NoteListNOForm";
 import {getCurrentNote, getIsNoteList, getNoteTextarea} from "../../../redux/mainSelector";
 import {required} from "../../formUtils/validatings";
 import {setPutNoteThunk} from "../../../redux/mainReducer";
+import {setToggleModalAC} from "../../../redux/modalsReducer";
 
 
 
@@ -22,11 +23,17 @@ export const NoteListFormContainer = () => {
 		dispatch( setPutNoteThunk(`#Заметка_${currentNote}`, body, color) );
 	};
 
+	const onShowModalDelete = (evt) => {
+		evt.preventDefault();
+		dispatch( setToggleModalAC() );
+	};
+
 
 
 	return isNoteList ?
 		<NoteListForm textAreaText={textAreaText}
 									onSubmit={onSubmit}
+									onShowModalDelete={onShowModalDelete}
 									required={required} />
 		:
 		<NoteListNOForm />;

@@ -3,7 +3,7 @@ import {Form, Field} from "react-final-form";
 
 import styles from "./NoteListForm.module.css";
 
-export const NoteListForm = ({textAreaText, onSubmit, required}) => {
+export const NoteListForm = ({textAreaText, onSubmit, onShowModalDelete, required}) => {
 
 
 	return (
@@ -53,7 +53,7 @@ export const NoteListForm = ({textAreaText, onSubmit, required}) => {
 										</div>
 
 										<div className={styles.noteFormBtnBlock}>
-											<button className={styles.noteFormBtnBlock__btnDel}>Удалить</button>
+											<button onClick={onShowModalDelete} className={styles.noteFormBtnBlock__btnDel}>Удалить</button>
 											<button className={styles.noteFormBtnBlock__btnSubmit}>Сохранить</button>
 										</div>
 

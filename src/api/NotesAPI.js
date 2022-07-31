@@ -17,7 +17,7 @@ export class NotesAPI extends AjaxAPI {
 		};
 		return this.instance.post(`/note`, bodyObj, {
 			headers: {
-				'Authorization': `Basic ${token}`
+				'Authorization': `Bearer ${token}`
 			},
 		});
 	}
@@ -31,7 +31,21 @@ export class NotesAPI extends AjaxAPI {
 		};
 		return this.instance.put(`/note`, bodyObj, {
 			headers: {
-				'Authorization': `Basic ${token}`
+				'Authorization': `Bearer ${token}`
+			},
+		});
+	}
+
+	deleteNote(id, title, body, color, token){
+		const bodyObj = {
+			id,
+			title,
+			body,
+			color,
+		};
+		return this.instance.delete(`/note`, bodyObj, {
+			headers: {
+				'Authorization': `Bearer ${token}`
 			},
 		});
 	}

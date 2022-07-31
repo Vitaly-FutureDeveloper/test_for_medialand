@@ -12,17 +12,20 @@ export const getNotes = createSelector(getNotesSelector,
 	(notes) => notes
 );
 
-const getBorderColorSelector = (state, iterableElement) => state.mainPage.notes[iterableElement].noteBorderColor;
+const getBorderColorSelector = (state, iterableElement) => state.mainPage.notes[iterableElement] ?
+	state.mainPage.notes[iterableElement].noteBorderColor : '';
 export const getBorderColor = createSelector(getBorderColorSelector,
 	(borderColor) => borderColor
 );
 
-const getNoteTitleSelector = (state, iterableElement) => state.mainPage.notes[iterableElement].noteTitle;
+const getNoteTitleSelector = (state, iterableElement) => state.mainPage.notes[iterableElement] ?
+	state.mainPage.notes[iterableElement].noteTitle : '';
 export const getNoteTitle = createSelector(getNoteTitleSelector,
 	(noteTitle) => noteTitle
 );
 
-const getNoteTextSelector = (state, iterableElement) => state.mainPage.notes[iterableElement].noteText;
+const getNoteTextSelector = (state, iterableElement) => state.mainPage.notes[iterableElement] ?
+	state.mainPage.notes[iterableElement].noteText : '';
 export const getNoteText = createSelector(getNoteTextSelector,
 	(noteText) => noteText
 );

@@ -5,6 +5,7 @@ const SET_CURRENT_NOTE = "SET_CURRENT_NOTE";
 const GET_NOTES_FROM_BACKEND = "GET_NOTES_FROM_BACKEND";
 const SET_NOTE_FROM_BACKEND = "SET_NOTE_FROM_BACKEND";
 const PUT_NOTE_FROM_BACKEND = "PUT_NOTE_FROM_BACKEND";
+const DELETE_NOTE_FROM_BACKEND = "DELETE_NOTE_FROM_BACKEND";
 
 const SET_TEXT_TO_CURRENT_NOTE = "SET_TEXT_TO_CURRENT_NOTE";
 
@@ -29,16 +30,14 @@ const mainReducer = (state=initialState, action) => {
 
 		case GET_NOTES_FROM_BACKEND: {
 			// Получение списка через get запрос
-			const newId = state.notes.length + 1;
-			// const pushObj = {
-			// 	noteId: newId,
-			// 	noteTitle: `#Заметка_${newId}`,
-			// 	noteText: action.body,
-			// 	noteBorderColor: action.color,
-			// }
 			const body = {
 				...state,
-				notes: [...state.notes, action.notes],
+				notes: [...state.notes, action.notes.map(() => ({
+					noteId: action.notes.id,
+					noteTitle: action.notes.title,
+					noteText: action.notes.body,
+					noteBorderColor: action.notes.color,
+				}))],
 			}
 			return body;
 		}
@@ -73,6 +72,15 @@ const mainReducer = (state=initialState, action) => {
 				notes: [...state.notes],
 			}
 			body.notes[currentNote] = pushObj;
+			return body;
+		}
+
+		case DELETE_NOTE_FROM_BACKEND: {
+			// Удалит 1 выделеный note
+			const body = {
+				...state,
+				notes: [...state.notes.splice(action.currentNote, 1)],
+			}
 			return body;
 		}
 
@@ -172,6 +180,23 @@ export const setPutNoteThunk = (title, body, color) => async (dispatch, getState
 		const {id, title, body, color} = response.data.notes;
 
 		dispatch( putNoteFromBackendAC(id, title, body, color) );
+	}
+};
+
+const setDeleteNoteAC = (currentNote) => ({
+	type: DELETE_NOTE_FROM_BACKEND,
+	currentNote,
+});
+
+export const setDeleteNoteThunk = (title, body, color) => async (dispatch, getState) => {
+	const currentNote = getState().mainPage.currentNote;
+	const noteId = getState().mainPage.notes[currentNote].noteId;
+	const token = getState().formPage.token;
+
+	const response = await noteAPI.deleteNote(noteId, title, body, color, token);
+
+	if (response.data.status === "ok") {
+		dispatch( setDeleteNoteAC(currentNote) );
 	}
 };
 
