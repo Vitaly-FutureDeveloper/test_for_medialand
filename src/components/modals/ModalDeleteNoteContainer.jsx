@@ -1,10 +1,14 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
+
 import {setToggleModalAC} from "../../redux/modalsReducer";
-import {getIsVisibleDeleteModal} from "../../redux/modalsSelectors";
-import {ModalDeleteNote} from "./ModalDeleteNote";
 import {setDeleteNoteThunk} from "../../redux/mainReducer";
+
+import {getIsVisibleDeleteModal} from "../../redux/modalsSelectors";
 import {getBorderColor, getCurrentNote, getNoteText, getNoteTitle} from "../../redux/mainSelector";
+
+import {ModalDeleteNote} from "./ModalDeleteNote";
+
 
 
 export const ModalDeleteNoteContainer = () => {
@@ -20,7 +24,6 @@ export const ModalDeleteNoteContainer = () => {
 	const noteText = useSelector((state) => getNoteText(state, currentNote));
 
 	const onSubmit = () => {
-		console.log('sdadad')
 		dispatch( setDeleteNoteThunk(noteTitle, noteText, borderColor) );
 	};
 

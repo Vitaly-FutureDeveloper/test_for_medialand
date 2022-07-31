@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import { AuthContainer } from "./components/Auth/AuthContainer";
 import {Provider} from "react-redux";
 import store from "./redux/store";
-import MainContainer from "./components/Main/MainContainer";
+
+const AuthContainer = React.lazy(() => import("./components/Auth/AuthContainer"));
+const MainContainer = React.lazy(() => import("./components/Main/MainContainer"));
 
 
 function App() {
@@ -13,14 +14,20 @@ function App() {
   return (
 		<BrowserRouter>
 			<Provider store={store}>
+
 				<div className='app-wrapper'>
 
-					<Routes>
-						<Route path='/*' element={<MainContainer />} />
-						<Route path='/auth' element={<AuthContainer />} />
-					</Routes>
+					<React.Suspense fallback={<p> Loading...</p>}>
+
+						<Routes>
+							<Route path='/*' element={ <MainContainer />} />
+							<Route path='/auth' element={ <AuthContainer />} />
+						</Routes>
+
+					</React.Suspense>
 
 				</div>
+
 			</Provider>
     </BrowserRouter>
   );
