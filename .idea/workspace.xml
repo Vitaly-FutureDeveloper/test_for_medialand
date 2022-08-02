@@ -11,7 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee9fc5c-044a-417f-9b21-2c5b1b0adb34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/modalsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/modalsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/modalsSelectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/modalsSelectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,7 @@
       <workItem from="1659252430441" duration="15841000" />
       <workItem from="1659274437599" duration="26420000" />
       <workItem from="1659437231690" duration="433000" />
-      <workItem from="1659438077819" duration="265000" />
+      <workItem from="1659438077819" duration="413000" />
     </task>
     <servers />
   </component>

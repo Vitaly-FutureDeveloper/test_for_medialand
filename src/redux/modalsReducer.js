@@ -2,7 +2,7 @@ const SET_SHOW_MODAL_DELETE_NOTE = "SET_SHOW_MODAL_DELETE_NOTE";
 
 const initialState = {
 	modalDeleteNote: {
-		visibile: false,
+		visible: false,
 	}
 };
 
@@ -15,7 +15,7 @@ const modalsReducer = (state=initialState, action) => {
 				...state,
 				...state.modalDeleteNote,
 			};
-			body.modalDeleteNote.visibile = action.visible;
+			body.modalDeleteNote.visible = action.visible;
 			return body;
 		}
 
