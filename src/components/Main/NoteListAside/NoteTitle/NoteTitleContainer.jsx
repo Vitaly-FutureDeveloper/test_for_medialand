@@ -31,7 +31,6 @@ export const NoteTitleContainer = ({iterableElement, textAreaRef}) => {
 										backgroundColor={backgroundColor}
 										noteTitle={noteTitle}
 										noteText={noteText}
-										// textAreaText={textAreaText}
 										onChangeCurrentNoteItem={onChangeCurrentNoteItem}
 	/>;
 };

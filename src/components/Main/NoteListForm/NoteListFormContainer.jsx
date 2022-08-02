@@ -18,8 +18,7 @@ export const NoteListFormContainer = ({textAreaRef}) => {
 
 	const currentNote = useSelector(getCurrentNote);
 
-	const isNoteList = useSelector((state) => getIsNoteList(state));
-	// const textAreaText = useSelector((state) => getNoteTextarea(state));
+	const isNoteList = useSelector(getIsNoteList);
 
 	const onSubmit = ({body, color}) => {
 		dispatch( setPutNoteThunk(`#Заметка_${currentNote}`, body, color) );
