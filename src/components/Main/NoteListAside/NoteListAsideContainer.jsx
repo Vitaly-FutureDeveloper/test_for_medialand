@@ -5,6 +5,7 @@ import {getNotesThunk, setNoteThunk} from "../../../redux/mainReducer";
 import {getNotes} from "../../../redux/mainSelector";
 
 import {NoteListAside} from "./NoteListAside";
+import {setToggleModalAC} from "../../../redux/modalsReducer";
 
 
 
@@ -13,8 +14,11 @@ export const NoteListAsideContainer = ({textAreaRef}) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		// Грузим notes при первом рендере
+		// Грузим notes при первом рендере, get method
 		dispatch( getNotesThunk() );
+
+		// Unmount - close ModalDeleteNote
+		return () => dispatch( setToggleModalAC(false) );
 	}, []);
 
 	const notes = useSelector(getNotes);

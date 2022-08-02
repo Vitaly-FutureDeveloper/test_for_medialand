@@ -11,12 +11,11 @@ const modalsReducer = (state=initialState, action) => {
 	switch (action.type){
 
 		case SET_SHOW_MODAL_DELETE_NOTE: {
-			const reverseVisible = !state.modalDeleteNote.visibile;
 			const body = {
 				...state,
 				...state.modalDeleteNote,
 			};
-			body.modalDeleteNote.visibile = reverseVisible;
+			body.modalDeleteNote.visibile = action.visible;
 			return body;
 		}
 
@@ -27,8 +26,9 @@ const modalsReducer = (state=initialState, action) => {
 
 
 
-export const setToggleModalAC = () => ({
-	type: SET_SHOW_MODAL_DELETE_NOTE
+export const setToggleModalAC = (visible) => ({
+	type: SET_SHOW_MODAL_DELETE_NOTE,
+	visible
 });
 
 

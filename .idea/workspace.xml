@@ -11,31 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee9fc5c-044a-417f-9b21-2c5b1b0adb34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/spinners/Loading.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/spinners/Loading.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/NotesAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/NotesAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/Auth.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/Auth.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthForm/AuthForm.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/Main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/Main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/MainContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/MainContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAside.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAside.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAsideContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteListAsideContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitle.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitleContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListAside/NoteTitle/NoteTitleContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListFormContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListForm/NoteListFormContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main/NoteListNOForm/NoteListNOForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main/NoteListNOForm/NoteListNOForm.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/mainReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/mainReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modals/ModalDeleteNoteContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/ModalDeleteNoteContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/modalsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/modalsReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +78,7 @@
       <workItem from="1659206798762" duration="11735000" />
       <workItem from="1659252430441" duration="15841000" />
       <workItem from="1659274437599" duration="26420000" />
+      <workItem from="1659437231690" duration="433000" />
     </task>
     <servers />
   </component>

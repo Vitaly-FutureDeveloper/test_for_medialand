@@ -29,7 +29,7 @@ export const ModalDeleteNoteContainer = () => {
 
 	const onCloseModalDelete = (evt) => {
 		evt.preventDefault();
-		dispatch( setToggleModalAC() );
+		dispatch( setToggleModalAC(false) );
 	};
 
 	return <ModalDeleteNote isVisible={isVisible} onSubmit={onSubmit} onCloseModalDelete={onCloseModalDelete} />

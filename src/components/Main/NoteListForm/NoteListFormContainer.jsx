@@ -27,13 +27,12 @@ export const NoteListFormContainer = ({textAreaRef}) => {
 
 	const onShowModalDelete = (evt) => {
 		evt.preventDefault();
-		dispatch( setToggleModalAC() );
+		dispatch( setToggleModalAC(true) );
 	};
 
 
 	return isNoteList ?
 		<NoteListForm textAreaRef={textAreaRef}
-									// textAreaText={textAreaText}
 									onSubmit={onSubmit}
 									onShowModalDelete={onShowModalDelete}
 									required={required} />
